@@ -14,12 +14,12 @@ To get started, ensure you have the `kramdown` and `jekyll` gems installed.
 
     rbx gem install jekyll kramdown
 
-The documentation source is under the `web/doc` directory. There are
+The documentation source is under the `./doc` directory. There are
 subdirectories for each language to which the documentation has been
 translated (eg `en`, `es`, etc.).
 
 There is a Table of Contents for each translation (e.g.
-`/web/doc/en/index.markdown`). The rest of the documentation consists of
+`./doc/en/index.markdown`). The rest of the documentation consists of
 single files that have YAML attributes to specify how the documents are
 connected. Essentially, the documentation can be viewed as a doubly-linked
 list of documents with each document pointing to the previous and next
@@ -62,25 +62,20 @@ topics that merely need to have documentation written for them.
 
 To add documentation for an existing topic or to fix existing documentation:
 
-1. Open the file for the topic under `web/doc/LANG`.
+1. Open the file for the topic under `./doc/LANG`.
 1. Add or improve the documentation.
 1. To view your updates while you are working on them, run
-   `rbx -S jekyll serve --watch` in the `web/` directory.
+   `rbx -S jekyll serve --watch` in the the root of the repository.
 1. Once finished adding or editing documentation, commit your changes to the
    source files.
-1. Run `rbx -S jekyll build` in the `web/` directory to force update of all
-   generated files in `web/_site`.
-1. Commit the generated files. If making a small change, the generated files
-   can be committed with the documentation source files. If making many
-   changes, commit the generated files separately to make reviewing changes
-   more simple.
 
+   **Note:** Github generates the HTML output so there is no need to commit generated files.
 
 ### Adding New Documentation
 
 To add documentation for which no existing topic exists:
 
-1. Create a new file with the .markdown extension under `web/doc/LANG`.
+1. Create a new file with the .markdown extension under `./doc/LANG`.
 1. Set up the attributes to link the new file into the existing files. This
    will require editing the _previous_ and _next_ attributes of the existing
    files to insert the new file, as well as adding an entry to
@@ -90,9 +85,5 @@ To add documentation for which no existing topic exists:
 1. Edit the new file using Markdown syntax.
 1. Once finished adding or editing documentation, commit your changes to the
    source files.
-1. Run `rbx -S jekyll build` in the `web/` directory to force update of all
-   generated files in `web/_site`.
-1. Commit the generated files. If making a small change, the generated files
-   can be committed with the documentation source files. If making many
-   changes, commit the generated files separately to make reviewing changes
-   more simple.
+
+    **Note:** Github generates the HTML output so there is no need to commit generated files.
